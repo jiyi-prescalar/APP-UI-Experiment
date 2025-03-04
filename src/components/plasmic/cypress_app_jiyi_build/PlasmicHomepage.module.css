@@ -1,0 +1,84 @@
+.root {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-content: flex-start;
+  justify-items: center;
+  min-width: 0;
+  min-height: 0;
+  grid-template-columns:
+    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
+    min(
+      var(--plsmc-standard-width),
+      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
+    )
+    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+  padding: 0px;
+}
+.root > * {
+  grid-column: 4;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root > * {
+    grid-column: 4;
+  }
+}
+.pageLayout:global(.__wab_instance):global(.__wab_instance) {
+  position: relative;
+}
+.img {
+  object-fit: cover;
+  max-width: 100%;
+  object-position: center center;
+  height: 357px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  width: 348px;
+}
+.img > picture > img {
+  object-fit: cover;
+  object-position: center center;
+}
+.usernameInput {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-weight: 400;
+  text-align: left;
+  font-size: 16px;
+  min-width: 0;
+  margin: 50px 260px 0px;
+}
+.input:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.text__ybd3N {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  font-size: 16px;
+  min-width: 0;
+}
+.passwordInput:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  margin-top: 75px;
+  margin-right: 0px;
+  width: 285px;
+}
+.text__qzpee {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: #000000;
+  min-width: 0;
+}
