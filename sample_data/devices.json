@@ -1,0 +1,11 @@
+                                                        json_agg                                                         
+-------------------------------------------------------------------------------------------------------------------------
+ [{"id":1,"device_type":9,"serial_number":"ABC123456","name":"Widget 1","hardware_version":"1.0","firmware_version":1}, +
+  {"id":2,"device_type":9,"serial_number":"ABC123457","name":"Widget 2","hardware_version":"1.0","firmware_version":2}, +
+  {"id":3,"device_type":10,"serial_number":"XYZ98765","name":"lidar 1","hardware_version":"1.0","firmware_version":3},  +
+  {"id":4,"device_type":10,"serial_number":"XYZ98766","name":"lidar 2","hardware_version":"1.0","firmware_version":3},  +
+  {"id":7,"device_type":9,"serial_number":"ABC123460","name":"Widget4","hardware_version":"1.1","firmware_version":2},  +
+  {"id":10,"device_type":9,"serial_number":"ABC123461","name":"Widget5","hardware_version":"1.1","firmware_version":2}, +
+  {"id":11,"device_type":9,"serial_number":"ABC123459","name":"Widget3","hardware_version":"1.1","firmware_version":2}]
+(1 row)
+

@@ -47,19 +47,19 @@ import {
   useDollarState,
   usePlasmicTranslator,
   useTrigger,
-  wrapWithClassName
+  wrapWithClassName,
 } from "@plasmicapp/react-web";
 import {
   DataCtxReader as DataCtxReader__,
   useDataEnv,
-  useGlobalActions
+  useGlobalActions,
 } from "@plasmicapp/react-web/lib/host";
 import * as plasmicAuth from "@plasmicapp/react-web/lib/auth";
 import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import {
   executePlasmicDataOp,
   usePlasmicDataOp,
-  usePlasmicInvalidate
+  usePlasmicInvalidate,
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import PageLayout from "../../PageLayout"; // plasmic-import: SzSP4r-gx0KC/component
@@ -131,7 +131,7 @@ function PlasmicDeviceList__RenderFunc(props: {
 
   const $props = {
     ...args,
-    ...variants
+    ...variants,
   };
 
   const $ctx = useDataEnv?.() || {};
@@ -151,7 +151,7 @@ function PlasmicDeviceList__RenderFunc(props: {
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        onMutate: generateOnMutateForSpec("selectedRowKey", RichTable_Helpers)
+        onMutate: generateOnMutateForSpec("selectedRowKey", RichTable_Helpers),
       },
       {
         path: "table.selectedRow",
@@ -159,7 +159,7 @@ function PlasmicDeviceList__RenderFunc(props: {
         variableType: "object",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        onMutate: generateOnMutateForSpec("selectedRow", RichTable_Helpers)
+        onMutate: generateOnMutateForSpec("selectedRow", RichTable_Helpers),
       },
       {
         path: "table.selectedRows",
@@ -167,7 +167,7 @@ function PlasmicDeviceList__RenderFunc(props: {
         variableType: "array",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        onMutate: generateOnMutateForSpec("selectedRows", RichTable_Helpers)
+        onMutate: generateOnMutateForSpec("selectedRows", RichTable_Helpers),
       },
       {
         path: "table.selectedRowKeys",
@@ -175,7 +175,7 @@ function PlasmicDeviceList__RenderFunc(props: {
         variableType: "array",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
-        onMutate: generateOnMutateForSpec("selectedRowKeys", RichTable_Helpers)
+        onMutate: generateOnMutateForSpec("selectedRowKeys", RichTable_Helpers),
       },
       {
         path: "form.value",
@@ -184,7 +184,7 @@ function PlasmicDeviceList__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "form",
-        onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
+        onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers),
       },
       {
         path: "form.isSubmitting",
@@ -193,7 +193,7 @@ function PlasmicDeviceList__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false,
 
         refName: "form",
-        onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
+        onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers),
       },
       {
         path: "form2.value",
@@ -202,7 +202,7 @@ function PlasmicDeviceList__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
 
         refName: "form2",
-        onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers)
+        onMutate: generateOnMutateForSpec("value", FormWrapper_Helpers),
       },
       {
         path: "form2.isSubmitting",
@@ -211,8 +211,8 @@ function PlasmicDeviceList__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false,
 
         refName: "form2",
-        onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers)
-      }
+        onMutate: generateOnMutateForSpec("isSubmitting", FormWrapper_Helpers),
+      },
     ],
     [$props, $ctx, $refs]
   );
@@ -220,7 +220,7 @@ function PlasmicDeviceList__RenderFunc(props: {
     $props,
     $ctx,
     $queries: $queries,
-    $refs
+    $refs,
   });
   const dataSourcesCtx = usePlasmicDataSourceContext();
   const plasmicInvalidate = usePlasmicInvalidate();
@@ -233,11 +233,11 @@ function PlasmicDeviceList__RenderFunc(props: {
         userArgs: {},
         cacheKey: `plasmic.$.d45c4658-f70a-4088-917f-ac237a884e05.$.`,
         invalidatedKeys: null,
-        roleId: null
+        roleId: null,
       };
-    })
+    }),
   };
-  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
+  if (Object.keys(new$Queries).some((k) => new$Queries[k] !== $queries[k])) {
     setDollarQueries(new$Queries);
 
     $queries = new$Queries;
@@ -267,7 +267,7 @@ function PlasmicDeviceList__RenderFunc(props: {
             data-plasmic-override={overrides.pageLayout}
           >
             <DataCtxReader__>
-              {$ctx => (
+              {($ctx) => (
                 <React.Fragment>
                   <section
                     data-plasmic-name={"section"}
@@ -284,7 +284,7 @@ function PlasmicDeviceList__RenderFunc(props: {
                         sty.h1
                       )}
                     >
-                      {"Cypress Device Management"}
+                      {"Cypress Device Management: Jiyi, I changed this page!"}
                     </h1>
                     <div
                       className={classNames(
@@ -342,11 +342,11 @@ function PlasmicDeviceList__RenderFunc(props: {
                       scopeClassName: sty["table__instance"],
                       selectedRowKey: generateStateValueProp($state, [
                         "table",
-                        "selectedRowKey"
+                        "selectedRowKey",
                       ]),
                       selectedRowKeys: generateStateValueProp($state, [
                         "table",
-                        "selectedRowKeys"
+                        "selectedRowKeys",
                       ]),
                       themeResetClassName: classNames(
                         projectcss.root_reset,
@@ -356,27 +356,27 @@ function PlasmicDeviceList__RenderFunc(props: {
                         projectcss.plasmic_tokens,
                         plasmic_antd_5_hostless_css.plasmic_tokens,
                         plasmic_plasmic_rich_components_css.plasmic_tokens
-                      )
+                      ),
                     };
                     initializeCodeComponentStates(
                       $state,
                       [
                         {
                           name: "selectedRowKey",
-                          plasmicStateName: "table.selectedRowKey"
+                          plasmicStateName: "table.selectedRowKey",
                         },
                         {
                           name: "selectedRow",
-                          plasmicStateName: "table.selectedRow"
+                          plasmicStateName: "table.selectedRow",
                         },
                         {
                           name: "selectedRows",
-                          plasmicStateName: "table.selectedRows"
+                          plasmicStateName: "table.selectedRows",
                         },
                         {
                           name: "selectedRowKeys",
-                          plasmicStateName: "table.selectedRowKeys"
-                        }
+                          plasmicStateName: "table.selectedRowKeys",
+                        },
                       ],
                       [],
                       RichTable_Helpers ?? {},
@@ -419,7 +419,7 @@ function PlasmicDeviceList__RenderFunc(props: {
                       labelCol: { span: 8, horizontalOnly: true },
                       layout: "vertical",
                       mode: undefined,
-                      onFinish: async values => {
+                      onFinish: async (values) => {
                         const $steps = {};
 
                         $steps["airtableUpdateById"] = true
@@ -430,19 +430,19 @@ function PlasmicDeviceList__RenderFunc(props: {
                                   opId: "350ce839-ad5b-4932-8ef4-b344d3b8f481",
                                   userArgs: {
                                     id: [
-                                      $state.table.selectedRow.__airtable_id
+                                      $state.table.selectedRow.__airtable_id,
                                     ],
                                     variables: [
                                       $state.form.value.Name,
                                       $state.form.value["Part Number"],
                                       $state.form.value.Version,
-                                      undefined
-                                    ]
+                                      undefined,
+                                    ],
                                   },
                                   cacheKey: null,
                                   invalidatedKeys: ["plasmic_refresh_all"],
-                                  roleId: null
-                                }
+                                  roleId: null,
+                                },
                               };
                               return (async ({ dataOp, continueOnError }) => {
                                 try {
@@ -451,7 +451,7 @@ function PlasmicDeviceList__RenderFunc(props: {
                                     {
                                       userAuthToken:
                                         dataSourcesCtx?.userAuthToken,
-                                      user: dataSourcesCtx?.user
+                                      user: dataSourcesCtx?.user,
                                     }
                                   );
                                   await plasmicInvalidate(
@@ -486,22 +486,22 @@ function PlasmicDeviceList__RenderFunc(props: {
                           FormWrapper_Helpers
                         ).apply(null, eventArgs);
                       },
-                      ref: ref => {
+                      ref: (ref) => {
                         $refs["form"] = ref;
                       },
-                      wrapperCol: { span: 16, horizontalOnly: true }
+                      wrapperCol: { span: 16, horizontalOnly: true },
                     };
                     initializeCodeComponentStates(
                       $state,
                       [
                         {
                           name: "value",
-                          plasmicStateName: "form.value"
+                          plasmicStateName: "form.value",
                         },
                         {
                           name: "isSubmitting",
-                          plasmicStateName: "form.isSubmitting"
-                        }
+                          plasmicStateName: "form.isSubmitting",
+                        },
                       ],
                       [],
                       FormWrapper_Helpers ?? {},
@@ -620,13 +620,13 @@ function PlasmicDeviceList__RenderFunc(props: {
                                     userArgs: {
                                       variables: [
                                         $state.form2.value,
-                                        $state.form2.value
-                                      ]
+                                        $state.form2.value,
+                                      ],
                                     },
                                     cacheKey: null,
                                     invalidatedKeys: ["plasmic_refresh_all"],
-                                    roleId: null
-                                  }
+                                    roleId: null,
+                                  },
                                 };
                                 return (async ({ dataOp, continueOnError }) => {
                                   try {
@@ -635,7 +635,7 @@ function PlasmicDeviceList__RenderFunc(props: {
                                       {
                                         userAuthToken:
                                           dataSourcesCtx?.userAuthToken,
-                                        user: dataSourcesCtx?.user
+                                        user: dataSourcesCtx?.user,
                                       }
                                     );
                                     await plasmicInvalidate(
@@ -679,7 +679,7 @@ function PlasmicDeviceList__RenderFunc(props: {
                       labelCol: { span: 8, horizontalOnly: true },
                       layout: "vertical",
                       mode: undefined,
-                      onFinish: async values => {
+                      onFinish: async (values) => {
                         const $steps = {};
 
                         $steps["airtableCreate"] = true
@@ -693,13 +693,13 @@ function PlasmicDeviceList__RenderFunc(props: {
                                       $state.form2.value.Name,
                                       $state.form2.value["Part Number"],
                                       undefined,
-                                      undefined
-                                    ]
+                                      undefined,
+                                    ],
                                   },
                                   cacheKey: null,
                                   invalidatedKeys: ["plasmic_refresh_all"],
-                                  roleId: null
-                                }
+                                  roleId: null,
+                                },
                               };
                               return (async ({ dataOp, continueOnError }) => {
                                 try {
@@ -708,7 +708,7 @@ function PlasmicDeviceList__RenderFunc(props: {
                                     {
                                       userAuthToken:
                                         dataSourcesCtx?.userAuthToken,
-                                      user: dataSourcesCtx?.user
+                                      user: dataSourcesCtx?.user,
                                     }
                                   );
                                   await plasmicInvalidate(
@@ -742,22 +742,22 @@ function PlasmicDeviceList__RenderFunc(props: {
                           FormWrapper_Helpers
                         ).apply(null, eventArgs);
                       },
-                      ref: ref => {
+                      ref: (ref) => {
                         $refs["form2"] = ref;
                       },
-                      wrapperCol: { span: 16, horizontalOnly: true }
+                      wrapperCol: { span: 16, horizontalOnly: true },
                     };
                     initializeCodeComponentStates(
                       $state,
                       [
                         {
                           name: "value",
-                          plasmicStateName: "form2.value"
+                          plasmicStateName: "form2.value",
                         },
                         {
                           name: "isSubmitting",
-                          plasmicStateName: "form2.isSubmitting"
-                        }
+                          plasmicStateName: "form2.isSubmitting",
+                        },
                       ],
                       [],
                       FormWrapper_Helpers ?? {},
@@ -840,7 +840,7 @@ const PlasmicDescendants = {
     "table",
     "form",
     "form2",
-    "textArea"
+    "textArea",
   ],
   pageLayout: [
     "pageLayout",
@@ -849,14 +849,14 @@ const PlasmicDescendants = {
     "table",
     "form",
     "form2",
-    "textArea"
+    "textArea",
   ],
   section: ["section", "h1"],
   h1: ["h1"],
   table: ["table"],
   form: ["form"],
   form2: ["form2", "textArea"],
-  textArea: ["textArea"]
+  textArea: ["textArea"],
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -908,7 +908,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicDeviceList__ArgProps,
-          internalVariantPropNames: PlasmicDeviceList__VariantProps
+          internalVariantPropNames: PlasmicDeviceList__VariantProps,
         }),
       [props, nodeName]
     );
@@ -916,7 +916,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       variants,
       args,
       overrides,
-      forNode: nodeName
+      forNode: nodeName,
     });
   };
   if (nodeName === "root") {
@@ -930,10 +930,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 function withUsePlasmicAuth<P extends object>(
   WrappedComponent: React.ComponentType<P>
 ) {
-  const WithUsePlasmicAuthComponent: React.FC<P> = props => {
+  const WithUsePlasmicAuthComponent: React.FC<P> = (props) => {
     const dataSourceCtx = usePlasmicDataSourceContext() ?? {};
     const { isUserLoading, user, token } = plasmicAuth.usePlasmicAuth({
-      appId: "wFK9o893pxCgoNdQSBkm8A"
+      appId: "wFK9o893pxCgoNdQSBkm8A",
     });
 
     return (
@@ -942,7 +942,7 @@ function withUsePlasmicAuth<P extends object>(
           ...dataSourceCtx,
           isUserLoading,
           userAuthToken: token,
-          user
+          user,
         }}
       >
         <WrappedComponent {...props} />
@@ -974,8 +974,8 @@ export const PlasmicDeviceList = Object.assign(
       title: "",
       description: "",
       ogImageSrc: "",
-      canonical: ""
-    }
+      canonical: "",
+    },
   }
 );
 

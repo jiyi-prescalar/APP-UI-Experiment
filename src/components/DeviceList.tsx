@@ -3,9 +3,36 @@
 import * as React from "react";
 import {
   PlasmicDeviceList,
-  DefaultDeviceListProps
+  DefaultDeviceListProps,
 } from "./plasmic/cypress_app_jiyi_build/PlasmicDeviceList";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+
+// Define the DeviceStatus class
+class DeviceStatus {
+  constructor(
+    public id: number,
+    public name: string,
+    public device_type: number,
+    public serial_number: string,
+    public hardware_version: string,
+    public firmware_version: number,
+    public is_reachable: boolean,
+    public is_connected: boolean
+  ) {}
+
+  static fromJSON(json: any): DeviceStatus {
+    return new DeviceStatus(
+      json.id,
+      json.name,
+      json.device_type,
+      json.serial_number,
+      json.hardware_version,
+      json.firmware_version,
+      json.is_reachable,
+      json.is_connected
+    );
+  }
+}
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -22,7 +49,85 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // total control over the props for your component.
 export interface DeviceListProps extends DefaultDeviceListProps {}
 
+const mockBackend = true; // Global boolean to control mock data
+
 function DeviceList_(props: DeviceListProps, ref: HTMLElementRefOf<"div">) {
+  const [deviceData, setDeviceData] = React.useState<DeviceStatus[]>([]);
+
+  const fetchData = async () => {
+    try {
+      let json;
+      if (mockBackend) {
+        // Use mock data
+        await new Promise((resolve) => setTimeout(resolve, 750));
+        json = {
+          message: "Complete list of device status",
+          device_list: [
+            {
+              id: 1,
+              name: "Widget 1",
+              device_type: "widget board",
+              serial_number: "ABC123456",
+              hardware_version: "1.0",
+              firmware_version: "1.0.4",
+              is_reachable: true,
+              is_connected: true,
+            },
+            {
+              id: 2,
+              name: "Widget 2",
+              device_type: "widget board",
+              serial_number: "ABC123457",
+              hardware_version: "1.0",
+              firmware_version: "1.0.6",
+              is_reachable: true,
+              is_connected: false,
+            },
+            {
+              id: 3,
+              name: "lidar 1",
+              device_type: "Pandar 128 LiDAR",
+              serial_number: "XYZ98765",
+              hardware_version: "1.0",
+              firmware_version: "15.4",
+              is_reachable: true,
+              is_connected: false,
+            },
+          ],
+        };
+      } else {
+        // Fetch from backend
+        const response = await fetch(
+          "http://localhost:3030/api/device_rpc/status",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        json = await response.json();
+      }
+
+      console.log("@@@ RESP:", JSON.stringify(json, null, 2));
+      const deviceList: DeviceStatus[] = [];
+      for (const obj of json["device_list"]) {
+        const device = DeviceStatus.fromJSON(obj);
+        deviceList.push(device);
+      }
+      setDeviceData(deviceList);
+    } catch (error) {
+      console.error("Failed to fetch device data:", error);
+    }
+  };
+
+  React.useEffect(() => {
+    console.log("@@@ GH101: DeviceList_ useEffect");
+    fetchData();
+  }, []);
+
   // Use PlasmicDeviceList to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -38,7 +143,10 @@ function DeviceList_(props: DeviceListProps, ref: HTMLElementRefOf<"div">) {
   // By default, we are just piping all DeviceListProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicDeviceList root={{ ref }} {...props} />;
+  return (
+    //<PlasmicDeviceList root={{ ref }} {...props} />
+    <PlasmicDeviceList root={{ ref }} {...props} table={{ data: deviceData }} />
+  );
 }
 
 const DeviceList = React.forwardRef(DeviceList_);

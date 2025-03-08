@@ -18,7 +18,8 @@
     "@plasmicpkgs/plasmic-basic-components": "^0.0.234",
     "@plasmicpkgs/plasmic-rich-components": "^1.0.205",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

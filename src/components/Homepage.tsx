@@ -3,9 +3,10 @@
 import * as React from "react";
 import {
   PlasmicHomepage,
-  DefaultHomepageProps
+  DefaultHomepageProps,
 } from "./plasmic/cypress_app_jiyi_build/PlasmicHomepage";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -38,7 +39,12 @@ function Homepage_(props: HomepageProps, ref: HTMLElementRefOf<"div">) {
   // By default, we are just piping all HomepageProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicHomepage root={{ ref }} {...props} />;
+  return (
+    <div>
+      <PlasmicHomepage root={{ ref }} {...props} />
+      <Link to="/device-list">Go to Device List</Link>{" "}
+    </div>
+  );
 }
 
 const Homepage = React.forwardRef(Homepage_);

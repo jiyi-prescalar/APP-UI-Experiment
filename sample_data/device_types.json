@@ -1,0 +1,6 @@
+                                     json_agg                                     
+----------------------------------------------------------------------------------
+ [{"id":9,"type":"WIDGET","part_number":"ABC123","name":"widget board"},         +
+  {"id":10,"type":"HESAI_P128","part_number":"ABC124","name":"Pandar 128 LiDAR"}]
+(1 row)
+

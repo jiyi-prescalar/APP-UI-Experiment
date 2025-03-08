@@ -1,0 +1,7 @@
+                                                 json_agg                                                  
+-----------------------------------------------------------------------------------------------------------
+ [{"id":1,"device_type":9,"fw_version":"1.0.4","fw_size":"1MB","version_alias":["R2B4", "08_14_2023"]},   +
+  {"id":2,"device_type":9,"fw_version":"1.0.6","fw_size":"1.3MB","version_alias":["R2B5", "10_05_2023"]}, +
+  {"id":3,"device_type":10,"fw_version":"15.4","fw_size":"26MB","version_alias":null}]
+(1 row)
+
